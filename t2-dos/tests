@@ -1,0 +1,2 @@
+time curl -s host1/index.html
+ab -n 10 host1/index.html

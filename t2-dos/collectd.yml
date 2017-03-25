@@ -1,0 +1,19 @@
+---
+- hosts: vagrant
+  tasks:
+    - name: install collectd
+      package: name=collectd
+    - name: configure collectd
+      copy: src=files/collectd-nginx.conf dest=/etc/collectd.d/collectd-nginx.conf
+    - name: start collectd
+      service: name=collectd state=running enabled=true
+
+- hosts: vagrant
+  tasks:
+    - name: install nginx
+      package: name=nginx
+    - name: configure nginx
+      copy: src=files/nginx-status.conf dest=/etc/nginx/conf.d/nginx-status.conf
+    - name: start nginx
+      service: name=nginx state=running enabled=true
+

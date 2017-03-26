@@ -39,4 +39,10 @@ Depending on your skills with web technologies you may like to start with the
 
 ## Implementation instructions
 
-(to be added)
+[Leaflet.js](http://leafletjs.com/) and [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/api/) are relatively easy to use but yet powerfull JavaScript libraries for creating interactive web maps.
+
+There are very basic app skeletons for each in the repository:
++ [Mapbox GL JS app skeleton](/t3-osm/mapboxgl)
++ [Leaflet.js app skeleton](/t3-osm/leaflet)
+
+(more details to be added)

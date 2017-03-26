@@ -30,9 +30,9 @@ npm install -g serve
 ```
 
 Depending on your skills with web technologies you may like to start with the
-+ code in the [template dir](/template)
++ code in the [template dir](/t3-osm/template)
 + [Skeleton](http://getskeleton.com/) template
-+ [ionic](http://ionicframework.com/) that utilizes [Cordova](https://cordova.apache.org/) and [AngularJS](https://angularjs.org/)
++ [ionic](http://ionicframework.com/) framework that utilizes [Cordova](https://cordova.apache.org/) and [AngularJS](https://angularjs.org/)
 
 ## Implementation instructions
 

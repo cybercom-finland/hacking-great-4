@@ -20,8 +20,7 @@ More options (many require small server component implementation):
 
 ## Preparing to the #HackingGreat 4 @ Cybercom event
 
-Depeding on your interests you should have Python (2 or 3),
-or [Node.js](https://nodejs.org/) or [ionic](http://ionicframework.com/) installed. Node.js (+ npm + serve) can be installed to the Ubuntu 16.04 with the following commands:
+Depeding on your interests you should have [Node.js](https://nodejs.org/) (+ npm + serve) or [ionic](http://ionicframework.com/) installed. Node.js can be installed to the Ubuntu 16.04 with the following commands:
 ```
 sudo apt-get update
 sudo apt-get install nodejs

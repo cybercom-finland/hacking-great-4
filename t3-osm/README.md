@@ -1,7 +1,7 @@
 
 # Mobile maps with OpenStreetMap
 
-A cross-platform mobile application that uses OpenStreetMap will be built. Also, some open data other than the map itself will be  retrieved and shown on the map. You can choose the data freely but also  some ready to choose options will be given.
+A mobile application that uses OpenStreetMap will be built. Also, some open data other than the map itself will be  retrieved and shown on the map. You can choose the data freely but also  some ready to choose options will be given.
 
 ## Open data
 
@@ -20,7 +20,11 @@ More options (many require small server component implementation):
 
 ## Preparing to the #HackingGreat 4 @ Cybercom event
 
-Depeding on your interests you should have [Node.js](https://nodejs.org/) (+ npm + serve) or [ionic](http://ionicframework.com/) framework installed. Node.js can be installed to the Ubuntu 16.04 with the following commands:
+Depeding on your interests you should have [Node.js](https://nodejs.org/) (+ npm + serve) or [ionic](http://ionicframework.com/) framework installed.
+
+Node.js allows you to build more traditional web application that can be viewed also on a regular desktop browser. The ionic framework allows you to build a natively wrapped mobile application that can be installed to an Android or iOS device provided you have followed the instructions at the http://ionicframework.com/docs/v2/intro/deploying/ before this event.
+
+Node.js can be installed to the Ubuntu 16.04 with the following commands:
 ```
 sudo apt-get update
 sudo apt-get install nodejs

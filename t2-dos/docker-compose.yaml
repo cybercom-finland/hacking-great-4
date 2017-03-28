@@ -1,0 +1,20 @@
+version: '2'
+services:
+  riemann:
+    image: rlister/riemann
+    ports:
+      - "5556:5556"
+  collectd:
+    build: collectd-docker
+    ports:
+      - "25826:25826/udp"
+    depends_on:
+      - riemann
+  riemann-dash:
+    image: rlister/riemann-dash
+    ports:
+      - "80:4567"
+    depends_on:
+      - riemann
+    volumes:
+      - ./riemann-dash:/usr/local/lib/ruby/gems/2.1.0/gems/riemann-dash-0.2.14/config/

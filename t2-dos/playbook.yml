@@ -1,0 +1,40 @@
+---
+- hosts: host1, host2
+  tasks:
+    - name: install collectd
+      package: "name={{item}}"
+      with_items: 
+        - collectd
+        - collectd-nginx
+        - libselinux-python
+        - libsemanage-python
+    - name: configure collectd
+      copy: src=files/collectd-nginx.conf dest=/etc/collectd.d/collectd-nginx.conf
+    - name: allow collectd to access tcp network
+      seboolean:
+        name: collectd_tcp_network_connect
+        state: yes
+        persistent: yes
+    - name: start collectd
+      service: name=collectd state=running enabled=true
+
+- hosts: host1, host2
+  tasks:
+    - name: install nginx
+      package: name=nginx
+    - name: configure nginx
+      copy: src=files/nginx-status.conf dest=/etc/nginx/conf.d/nginx-status.conf
+    - name: start nginx
+      service: name=nginx state=running enabled=true
+
+- hosts: vagrant
+  tasks:
+    - name: install tools
+      package: "name={{ item }}"
+      with_items:
+       - iperf
+       - tcpdump
+       - telnet
+       - nc
+       - vim
+       - bind-utils

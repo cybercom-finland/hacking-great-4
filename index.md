@@ -28,6 +28,7 @@ No information about the objective is revealed beforehand.
 To prepare you can search Capture the Flag from Internet.
 
 ### Prerequisites and tools:
+
 * Prefereably a Linux laptop
 
 ---
@@ -36,11 +37,10 @@ Tech Track 2: Web-application and attacker (eg. DOS) scenario - Toni Ylenius
 ----------------------------------------------------------------------------
 
 ### Prerequisites and tools:
+
 * Prefereably a Linux laptop
 * SSH client to connect to the prepared system
 * Vagrant if you want to create replicate the setup on you own laptop
-
-
 
 ---
 
@@ -48,15 +48,18 @@ Tech Track 3: Mobile maps with OpenStreetMap – Erno Mäkinen
 ----------------------------------------------------------- 
 
 ### Prerequisites and tools:
-* 
+
+* A Linux laptop unless you want to install app to your phone in the 
+  \#HackingGreat event. In the latter case you should have Windows or Mac 
+  laptop and follow the deployment instructions at the site 
+  <http://ionicframework.com/docs/v2/intro/deploying/> before the 
+  \#HackingGreat event.
+* Node.js (+ npm + serve) or ionic framework (see 
+  <https://github.com/cybercom-finland/hacking-great-4/tree/master/t3-osm> for 
+  details)
 
 ---
 
 ## Tools common for all the tracks:
-* Your own laptop, preferrably Linux
+* Your own laptop
 * Code \(<https://github.com/cybercom-finland/hacking-great-4>\), using: `git clone https://github.com/cybercom-finland/hacking-great-4`
-* An IDE, for example:
-  * Eclipse ([https://eclipse.org/](https://eclipse.org/)
-  * Atom ([https://atom.io/](https://atom.io/))
-  * WebStorm ([https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/))
-  * or maybe even all of them.

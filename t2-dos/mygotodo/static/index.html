@@ -1,0 +1,115 @@
+<html lang="en" ng-app="mytodo">
+<head>
+	<meta charset="UTF-8">
+	<title>My TODO</title>
+</head>
+<!-- TODO anguler 1.6.3 is the latest -->
+<!-- putting this at the top to remove the jarring load -->
+<script src="http://code.angularjs.org/1.2.10/angular.min.js"></script>
+<body ng-controller="MainCtl">
+
+	<div class="heading">
+		<h1>My TODO</h1>
+	</div>
+	<div class="buttondiv">
+		<button class="btn" ng-click="add()">
+			Add an item
+		</button>
+	</div>
+	<div class="table">
+		<div class="list">
+			<h3>Todos</h3>
+			<ul class="nav nav-pills nav-stacked">
+				<li ng-class="{active: i.title == selected.title}" ng-repeat="i in todos">
+					<a href="" ng-click="get($index)">{{i.title}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="content" ng-show="selected">
+			<h2>{{selected.title}}</h2>
+			<dl>
+				<dt>Content:</dt>
+				<dd>{{selected.content}}</dd>
+			</dl>
+		</div>
+		<div class="contentbuttons" ng-show="selected">
+			<button class="btn" ng-click="update(selected.idx)">
+				Update this item
+			</button>
+			<button class="btn" ng-click="remove(selected.idx)">
+				Remove this item
+			</button>
+		</div>
+	</div>
+
+<script src="http://code.angularjs.org/1.2.10/angular-resource.min.js"></script>
+<script>
+	var myapp = new angular.module("mytodo", ["ngResource"]);
+
+	myapp.controller("MainCtl", ["$scope", "$resource", function($scope, $resource){
+		// I designed the backend to play nicely with angularjs so this is all the
+		// setup we need to do all of the ususal operations.
+		var todo = $resource("/todos/:id", {id: '@id'}, {});
+
+		$scope.selected = null;
+
+		$scope.list = function(idx){
+			todo.query(function(data){
+				$scope.todos = data;
+				if(idx != undefined) {
+					$scope.selected = $scope.todos[idx];
+					$scope.selected.idx = idx;
+				}
+			}, function(error){
+				alert(error.data);
+			});
+		};
+
+		$scope.list();
+
+		$scope.get = function(idx){
+			todo.get({id: $scope.todos[idx].id}, function(data){
+				$scope.selected = data;
+				$scope.selected.idx = idx;
+			});
+		};
+
+		$scope.add = function() {
+			var title = prompt("Enter the todo's title.");
+			if(title == null){
+				return;
+			}
+			var content = prompt("Enter the todo's content.");
+			if(content == null){
+				return;
+			}
+			var newTodo = new todo();
+			newTodo.title = title;
+			newTodo.content = content;
+			newTodo.$save();
+
+			$scope.list();
+		};
+
+		$scope.update = function(idx) {
+			var todo = $scope.todos[idx];
+			var content = prompt("Enter new content", todo.content);
+			if(content == null) {
+				return;
+			}
+			todo.content = content;
+			todo.$save();
+
+			$scope.list(idx);
+		};
+
+		$scope.remove = function(idx){
+			$scope.todos[idx].$delete();
+			$scope.selected = null;
+			$scope.list();
+		};
+	}]);
+</script>
+
+</body>
+</html>

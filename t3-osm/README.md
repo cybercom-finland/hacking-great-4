@@ -40,7 +40,7 @@ Depending on your skills with web technologies you may like to start with the
 + [Skeleton](http://getskeleton.com/) template
 + [ionic](http://ionicframework.com/) framework that utilizes [Cordova](https://cordova.apache.org/) and [AngularJS](https://angularjs.org/)
 
-## Implementation instructions
+## Example application
 
 In the example application we are going to build an application that shows bus stop locations, real-time bus locations and current events in Tampere.
 
@@ -50,4 +50,66 @@ There are very basic app skeletons for each in the repository:
 + [Mapbox GL JS app skeleton](/t3-osm/mapboxgl)
 + [Leaflet.js app skeleton](/t3-osm/leaflet)
 
+## Implementation instructions for mobile HTML5 web site
 
+We will start with the Leaflet.js app skeleton in the example but feel free to use the Mapbox GL JS app skeleton.
+
+### Running and showing the app in a web browser
+
+On command line in the hacking-great-4 directory type:
+```
+cd t3-osm/leaflet
+serve
+```
+
+Then show the skeleton app in the browser by following instructions shown by the serve command.
+
+### App skeleton code
+
+The index.html includes Leaflet and jQuery library files and it has the map div that contains the map. Important is to notice the viewport meta tag values that are typically used with mobile HTML5 apps except the user-scalable=no attribute that is important for the map touch interaction to work.
+
+The style.css file just defines the map to fill the whole browser window.
+
+The script.js file defines default center coordinates and zoom for the map. When the index.html has been loaded by the browser the $( document ).ready() are run. Here the map is created and added to the div in the index.html. In addition, there a lot of different base maps that could be shown with the Leaflet (some examples shown at: https://wiki.openstreetmap.org/wiki/Tile_servers). Here we add basic OpenStreetMap layer to the map. After creating the map a data can be shown on top of it. 
+
+### Showing bus stops
+
+The bus stops with locations can be retrieved as GeoJSON that is easy to show with Leaflet. The jQuery library has getJSON function that can retrieve the bus stops via a REST call. The URL to call is given on the page: http://palvelut2.tampere.fi/tietovaranto/tietovaranto.php?id=17&alasivu=1&vapaasana=bussipys%C3%A4kit. Note: it is useful to add the srsName=EPSG:4326 parameter to query.
+
+However, there is a catch. There are over 3600 bus stops in Tampere region and interaction with the map can become slow with so many stops and furthermore retrieving so much data can create unnecessary load for the server. These issues can be solved.
+
+The first one can be solved using the [Leaflet.markercluster plugin](https://github.com/Leaflet/Leaflet.markercluster). The second one is often solved by caching the queries and results but in this case you can save the GeoJSON response as file and load it with the getJSON function from the local development web server.
+
+There are nice [instructions on presenting GeoJSON data as a cluster on Leaflet map](https://medium.com/@walleyyang/clustering-points-from-a-geojson-file-with-leaflet-fffa6549a960) by Walley Yang.
+
+### Showing events via Visit Tampere API
+
+Retrieving events around Tampere can be done by a REST call to the Visit Tampere API. When you go to the https://visittampere.fi/api-docs/ and click the GET /search row you can see that to search events for a specific time period you have to provide start_datetime and end_datetime and these are given as milliseconds from epoch (epoch here means 1.1.1970). Luckily JavaScript Date.now() function returns current date and time in milliseconds from epoch.
+
+The easiest way to try the actual REST calls is to open https://visittampere.fi/search?type=event in the browser and look for network traffic in the browser development console and give specific dates at the top of the browser window.
+
+There are some interesting features in the API (besides getting the events) most likely to make hacking a bit safer and also easier. When you do the REST call without server component in the script.js there are only three events returned. if the (undocumented) calendar=true parameter is added then only two events are returned. Furthermore, adding the calendar=true parameter includes coordinates to the returned events. Having the coordinates in the response makes life easier as you would otherwise have to use a geocoding service to find out coordinates for the event address.
+
+This time you can use L.marker function to create the event markers and marker.bindPopup function to show event data with the markers. It may be useful to see: http://leafletjs.com/examples/quick-start/.
+
+Since the returned answer is JSON you can access, for example, title of the second event like: jsonData[1].title.
+
+### Showing real-time bus locations
+
+Showing the real-time bus locations is not much harder. You can use setInterval function to call your own function, for example, once per second that makes the jQuery getJSON call and updates the location of the bus if there is a marker on the map for the bus or creates a new marker if needed. You can add a variable under myMapApp object that stores the needed bus data in an array.
+
+The REST call URL to the API that returns JSON is http://data.itsfactory.fi/siriaccess/vm/json as documented at the [ITS Factory wiki]('http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi)').
+
+Each bus is an array item under jsonData.Siri.ServiceDelivery.VehicleMonitoringDelivery[0].VehicleActivity. While the MonitoredVehicleJourney.LineRef tells the bus number, the unique identifier for each bus is value of the MonitoredVehicleJourney.VehicleRef. This identifier is needed for updating the bus location. 
+
+What comes to Leaflet you can use L.marker for the busses but if you like you can change marker icon to something more illustrative (there is an icon under [example-answer-1/img directory](/t3-osm/example-answer-1/img), CC-0 license). There is a Leafle tutorial for [Markers With Custom Icons](http://leafletjs.com/examples/custom-icons/).
+
+## Example answers
+
+If needed you can take a look in the
+*[example mobile web site map](/t3-osm/example-answer-1).
+*TODO: Ionic example app
+
+## Extra tasks
+
+(to be added)

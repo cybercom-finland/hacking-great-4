@@ -8,11 +8,13 @@ A mobile application that uses OpenStreetMap will be built. Also, some open data
 Suggested open location data:
 + City of Tampere
   + http://www.tampere.fi/tampereen-kaupunki/tietoa-tampereesta/avoin-data.html
+  + Bus stops: http://palvelut2.tampere.fi/tietovaranto/tietovaranto.php?id=17&alasivu=1&vapaasana=bussipys%C3%A4kit
 + ITS Factory
   + http://wiki.itsfactory.fi/index.php/Main_Page
-  + http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi)
+  + Real-time bus locations and more: http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi)
 + Visit Tampere
   + https://visittampere.fi/api-docs/
+  + https://visittampere.fi/search?type=event
 
 More options (many require small server component implementation):
 + https://gispohelp.zendesk.com/hc/fi/articles/208159815-Avoimen-datan-WMS-ja-WFS-karttapalveluiden-osoitteita
@@ -40,10 +42,12 @@ Depending on your skills with web technologies you may like to start with the
 
 ## Implementation instructions
 
+In the example application we are going to build an application that shows bus stop locations, real-time bus locations and current events in Tampere.
+
 [Leaflet.js](http://leafletjs.com/) and [Mapbox GL JS](https://www.mapbox.com/mapbox-gl-js/api/) are relatively easy to use but yet powerfull JavaScript libraries for creating interactive web maps.
 
 There are very basic app skeletons for each in the repository:
 + [Mapbox GL JS app skeleton](/t3-osm/mapboxgl)
 + [Leaflet.js app skeleton](/t3-osm/leaflet)
 
-(more details to be added)
+

@@ -15,6 +15,7 @@ Suggested open location data:
   + https://visittampere.fi/api-docs/
 
 More options (many require small server component implementation):
++ https://gispohelp.zendesk.com/hc/fi/articles/208159815-Avoimen-datan-WMS-ja-WFS-karttapalveluiden-osoitteita
 + http://www.paikkatietoikkuna.fi/web/fi/avoin-paikkatieto
 + http://directory.spatineo.com/
 

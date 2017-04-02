@@ -14,12 +14,12 @@ Suggested open location data:
   + Real-time bus locations and more: http://wiki.itsfactory.fi/index.php/Tampere_Public_Transport_SIRI_Interface_(Realtime_JSON_at_data.itsfactory.fi)
 + Visit Tampere
   + https://visittampere.fi/api-docs/
-  + https://visittampere.fi/search?type=event
+  + Events: https://visittampere.fi/search?type=event
 
 More options (many require small server component implementation):
-+ https://gispohelp.zendesk.com/hc/fi/articles/208159815-Avoimen-datan-WMS-ja-WFS-karttapalveluiden-osoitteita
-+ http://www.paikkatietoikkuna.fi/web/fi/avoin-paikkatieto
-+ http://directory.spatineo.com/
++ [Gispo - Avoimen Datan WMS- Ja WFS-Karttapalveluiden Osoitteita](https://gispohelp.zendesk.com/hc/fi/articles/208159815-Avoimen-datan-WMS-ja-WFS-karttapalveluiden-osoitteita)
++ [Paikkatietoikkuna - Avoin paikkatieto](http://www.paikkatietoikkuna.fi/web/fi/avoin-paikkatieto)
++ [Spatineo Directory](http://directory.spatineo.com/)
 
 ## Preparing to the #HackingGreat 4 @ Cybercom event
 
@@ -104,6 +104,10 @@ Each bus is an array item under jsonData.Siri.ServiceDelivery.VehicleMonitoringD
 
 What comes to Leaflet you can use L.marker for the busses but if you like you can change marker icon to something more illustrative (there is an icon under [example-answer-1/img directory](/t3-osm/example-answer-1/img), CC-0 license). There is a Leaflet tutorial for [Markers With Custom Icons](http://leafletjs.com/examples/custom-icons/).
 
+## Implementation instructions for the ionic app
+
+TODO
+
 ## Example answers
 
 If needed you can take a look in the
@@ -112,4 +116,15 @@ If needed you can take a look in the
 
 ## Extra tasks
 
-(to be added)
++ Implement a server component using NodeJS, Python, or your preferred framework / language that has a REST API for returning data, for example, from a CSV file or from a third party server.
++ Visualize GPX data
+  + You can find existing GPS traces from OpenStreetMap
+
+    ![GPS traces in OpenStreetMap](https://dl.dropboxusercontent.com/1/view/7i5jftw6hl5vaxe/Apps/Shutter/Selection_001.png GPS traces in OpenStreetMap)
+
+  + If you have records, for example, in [sports-tracker.com](http://www.sports-tracker.com/) or [flow.polar.com](https://flow.polar.com/) you can download and use them
+  + You can take a quick walk survey outside during the event and use a GPS logger, for example, [GPS Logger for Android](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=en) or for iOS maybe [OpenGpxTracker](https://wiki.openstreetmap.org/wiki/OpenGpxTracker)
++ Focus the position of the map based on geolocation
+  + See: [Using HTML Geolocation](https://www.w3schools.com/html/html5_geolocation.asp)
+  + There is a nice [Manual Geolocation plugin](https://chrome.google.com/webstore/detail/manual-geolocation/jpiefjlgcjmciajdcinaejedejjfjgki) for Chromium / Chrome web browser
+  

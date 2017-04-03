@@ -32,6 +32,10 @@
     - name: install tools
       package: "name={{ item }}"
       with_items:
+       - iftop
+       - net-tools
+       - strace
+       - lsof
        - iperf
        - tcpdump
        - telnet

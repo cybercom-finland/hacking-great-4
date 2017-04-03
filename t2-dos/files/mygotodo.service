@@ -1,0 +1,11 @@
+[Unit]
+Description=golang mygotodo app
+
+[Service]
+User=goapp
+Group=goapp
+WorkingDirectory=/opt/mygotodo
+ExecStart=/opt/mygotodo/mygotodo
+
+[Install]
+WantedBy=multi-user.target

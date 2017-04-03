@@ -14,7 +14,13 @@ ansible 2.2 or later
 
 ## To create the stack
 
-Run
+Build go app locally
+
+    cd mygotodo
+    make
+    cd ..
+
+Run to start the vms
 
     vagrant up
     ansible-playbook playbook.yml

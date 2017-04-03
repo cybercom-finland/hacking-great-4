@@ -18,14 +18,40 @@
     - name: start collectd
       service: name=collectd state=running enabled=true
 
-- hosts: host1, host2
+- hosts: host1
   tasks:
     - name: install nginx
       package: name=nginx
     - name: configure nginx
-      copy: src=files/nginx-status.conf dest=/etc/nginx/conf.d/nginx-status.conf
+      copy: src=files/nginx.conf dest=/etc/nginx/nginx.conf
     - name: start nginx
       service: name=nginx state=running enabled=true
+    - name: allow nginx to relaoy
+      seboolean:
+        name: httpd_can_network_relay
+        state: yes
+        persistent: yes
+
+- hosts: host1
+  tasks:
+    - name: go app user
+      user: name=goapp system=yes
+    - name: go app dir
+      file: path=/opt/mygotodo state=directory owner=goapp group=goapp
+    - name: copy go app binary
+      copy: src=mygotodo/mygotodo dest=/opt/mygotodo/mygotodo mode=0755
+    - name: go app dir
+      file: path=/opt/mygotodo/static state=directory
+    - name: copy go index.html
+      copy: src=mygotodo/static/index.html dest=/opt/mygotodo/static/index.html
+    - name: go app service file
+      copy: src=files/mygotodo.service dest=/etc/systemd/system/mygotodo.service
+    - name: configure go app
+      systemd:
+        name: mygotodo
+        daemon_reload: yes
+        enabled: yes
+        state: started
 
 - hosts: vagrant
   tasks:

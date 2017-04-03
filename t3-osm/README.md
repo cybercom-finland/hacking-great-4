@@ -120,7 +120,7 @@ If needed you can take a look in the
 + Visualize GPX data
   + You can find existing GPS traces from OpenStreetMap
 
-    ![GPS traces in OpenStreetMap](https://dl.dropboxusercontent.com/1/view/7i5jftw6hl5vaxe/Apps/Shutter/Selection_001.png)
+    ![GPS traces in OpenStreetMap](/t3-osm/OpenStreetMap_GPS_traces_Tampere.png)
 
   + If you have records, for example, in [sports-tracker.com](http://www.sports-tracker.com/) or [flow.polar.com](https://flow.polar.com/) you can download and use them
   + You can take a quick walk survey outside during the event and use a GPS logger, for example, [GPS Logger for Android](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=en) or for iOS maybe [OpenGpxTracker](https://wiki.openstreetmap.org/wiki/OpenGpxTracker)

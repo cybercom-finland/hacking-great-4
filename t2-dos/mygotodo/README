@@ -1,11 +1,12 @@
 Adapted from Jake Coffman tutorial
 https://github.com/jakecoffman/go-angular-tutorial
-At current state very similar to original and the origin doesn't have license.
-The changes made for learning purposes.
 
-Requires golang to build
+Requires golang and git to build
 
 To build
 
-git submodule init
-go build
+make
+
+Beware some traps in the code.
+
+Use test_apis.sh to create some content.

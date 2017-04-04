@@ -11,6 +11,10 @@ Pre-requisite information and general information for the #HackingGreat sauna ev
 Information about the Time and Place see Meetup registration page
 <https://www.meetup.com/HackingGreat-Cybercom/events/238053879/>
 
+Collaborative Spotify playlist:
+[http://open.spotify.com/user/cybercomfinland/playlist/3UjTaopdGCr4xc8TWUWKJH](http://open.spotify.com/user/cybercomfinland/playlist/3UjTaopdGCr4xc8TWUWKJH)
+(Using your own account, click "follow", and then you can add songs to the playlist)
+
 Technical information and code are in Github repo <https://github.com/cybercom-finland/hacking-great-4>
 
 Bring your own laptop with preferably Linux! Other operating systems can be 

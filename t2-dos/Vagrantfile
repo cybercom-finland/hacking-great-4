@@ -49,6 +49,7 @@ Vagrant.configure(2) do |config|
     kvm.vm.provision "shell", inline: "sudo yum install -y epel-release"
     kvm.vm.provision "shell", inline: "sudo yum install -y docker && sudo chkconfig docker on && sudo service docker start"
     kvm.vm.provision "shell", inline: "sudo yum install -y python-pip && sudo pip install docker-compose"
+    kvm.vm.provision "shell", inline: "sudo setenforce 0 && sudo sed -i -e 's|SELINUX=enforcing|SELINUX=permissive|' /etc/sysconfig/selinux"
     kvm.vm.provision :hostmanager
   end
 

@@ -102,7 +102,7 @@ The REST call URL to the API that returns JSON is http://data.itsfactory.fi/siri
 
 Each bus is an array item under jsonData.Siri.ServiceDelivery.VehicleMonitoringDelivery[0].VehicleActivity. While the MonitoredVehicleJourney.LineRef tells the bus number, the unique identifier for each bus is value of the MonitoredVehicleJourney.VehicleRef. This identifier is needed for updating the bus location. 
 
-What comes to Leaflet you can use L.marker for the busses but if you like you can change marker icon to something more illustrative (there is an icon under [example-answer-1/img directory](/t3-osm/example-answer-1/img), CC-0 license). There is a Leaflet tutorial for [Markers With Custom Icons](http://leafletjs.com/examples/custom-icons/).
+What comes to Leaflet you can use L.marker for the busses but if you like you can change marker icon to something more illustrative (there is an icon under [example-answer-1-leaflet/img directory](/t3-osm/example-answer-1-leaflet/img), CC-0 license). There is a Leaflet tutorial for [Markers With Custom Icons](http://leafletjs.com/examples/custom-icons/).
 
 ## Implementation instructions for the ionic app
 
@@ -111,7 +111,9 @@ TODO
 ## Example answers
 
 If needed you can take a look in the
-+ [example mobile web site map](/t3-osm/example-answer-1).
++ example mobile web site map
+  + [leaflet version](/t3-osm/example-answer-1-leaflet)
+  + [Mapbox GL JS version](/t3-osm/example-answer-1-mapboxgljs)
 + TODO: Ionic example app
 
 ## Extra tasks

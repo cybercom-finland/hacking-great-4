@@ -29,7 +29,8 @@ To prepare you can search Capture the Flag from Internet.
 
 ### Prerequisites and tools:
 
-* Prefereably a Linux laptop
+* Prefereably a Linux laptop.
+** Kali Linux is recommended. VM is fine.
 
 ---
 

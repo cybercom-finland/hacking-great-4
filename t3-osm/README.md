@@ -106,7 +106,19 @@ What comes to Leaflet you can use L.marker for the busses but if you like you ca
 
 ## Implementation instructions for the ionic app
 
-TODO
+These instructions are for ionic version 1.
+
+```
+ionic start myMapApp https://github.com/calendee/ionic-leafletjs-map-demo
+cd myMapApp
+cordova plugin add cordova-plugin-geolocation
+ionic serve
+```
+
++ Edit myMapApp/www/index.html to use sass
++ Include Leaflet.js and Leaflet.markercluster like in the example 1
++ Also suggested is to use the [ionic-leafletjs-map-demo](https://github.com/calendee/ionic-leafletjs-map-demo), see also [angular-leaflet-directive](https://github.com/tombatossals/angular-leaflet-directive)
++ https://github.com/Eschon/Leaflet.markercluster, https://pastebin.com/raw/3ZjK6LtA
 
 ## Example answers
 

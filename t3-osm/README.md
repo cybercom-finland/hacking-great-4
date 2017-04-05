@@ -106,7 +106,22 @@ What comes to Leaflet you can use L.marker for the busses but if you like you ca
 
 ## Implementation instructions for the ionic app
 
-TODO
+These instructions are for ionic version 1.
+
+```
+ionic start myMapApp https://github.com/calendee/ionic-leafletjs-map-demo
+cd myMapApp
+cordova plugin add cordova-plugin-geolocation
+ionic serve
+```
+
++ Include Leaflet.js and Leaflet.markercluster like in the example 1
++ You may like to see also [angular-leaflet-directive](https://github.com/tombatossals/angular-leaflet-directive)
++ You may like to use Leaflet.markercluster from https://unpkg.com/leaflet.markercluster@1.0.4/dist/
++ It is good idea to have an Angular service for the open data sources and $http can be used to retrieve data over network
++ There is angular leafletData module and you may like to handle data in `leafletData.getMap().then(function(map) {})` because it may be easier to use the Leaflet map object than Angular functionalities
++ A lot of functionality from the [Example app 1, leaflet version](/t3-osm/example-answer-1-leaflet) can be (re)used
+
 
 ## Example answers
 
@@ -114,7 +129,7 @@ If needed you can take a look in the
 + example mobile web site map
   + [leaflet version](/t3-osm/example-answer-1-leaflet)
   + [Mapbox GL JS version](/t3-osm/example-answer-1-mapboxgljs)
-+ TODO: Ionic example app
++ [Ionic example app](/t3-osm/example-answer-2)
 
 ## Extra tasks
 

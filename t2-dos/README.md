@@ -1,4 +1,12 @@
-# A setup to play with a web service
+# Play with a web service in the preconfigured setup
+
+The addresses are handed over on premises.
+
+Dashboard looks like this
+
+![Riemann Dashboard](riemann-dashboard2.png)
+
+# Running an own setup
 
 ## Requirements
 

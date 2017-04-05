@@ -6,6 +6,7 @@
       with_items: 
         - collectd
         - collectd-nginx
+        - collectd-curl
         - libselinux-python
         - libsemanage-python
     - name: configure collectd

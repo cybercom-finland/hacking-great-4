@@ -24,5 +24,5 @@ Run to start the vms
 
     vagrant up
     ansible-playbook playbook.yml
-    vagrant ssh monitor -- "cd sync; sudo docker-compose up"
+    vagrant ssh monitor -- "cd /vagrant; sudo docker-compose up"
 

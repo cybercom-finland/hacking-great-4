@@ -1,6 +1,9 @@
 # A setup to play with a web service
 
 ## Requirements
+
+Vagrant on a linux host (requires KVM) and a shell.
+
 Vagrant needs plugins
 
 - vagrant-libvirt

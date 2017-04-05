@@ -10,6 +10,7 @@ angular.module('starter').controller('MapController',
     'leafletData',
     'leafletMapEvents',
     'leafletMarkerEvents',
+    '$compile',
     function(
 	$scope,
 	$cordovaGeolocation,
@@ -21,7 +22,8 @@ angular.module('starter').controller('MapController',
 	OpenDataService,
 	leafletData,
 	leafletMapEvents,
-	leafletMarkerEvents
+	leafletMarkerEvents,
+	$compile
       ) {
 
       /**
@@ -53,7 +55,7 @@ angular.module('starter').controller('MapController',
           markers : {},
           events: {
             map: {
-              enable: ['context'],
+		enable: ['context'],
               logic: 'emit'
             }
           }
@@ -83,9 +85,11 @@ angular.module('starter').controller('MapController',
 			  fillOpacity: 0.5,
 			  radius: 100
 		      });
-		      circle.bindPopup("<h3>" + jsonData[i].title + "</h3>" +
-				       "<img style='margin:10px;width:100px;' align='left' src='" + jsonData[i].image.src + "'>" +
-				       "<span>" + jsonData[i].description + "</span>");
+		      var html = "<h3>" + jsonData[i].title + "</h3>" +
+			  "<img style='margin:10px;width:100px;' align='left' src='" + jsonData[i].image.src + "'>" +
+			  "<span>" + jsonData[i].description + "</span>";
+		      
+		      circle.bindPopup(html);
 		      circle.addTo(map);
 		  }
 	      });
@@ -213,9 +217,5 @@ angular.module('starter').controller('MapController',
             console.log(err);
           });
 
-      };
-
-
-	
-	
+      };	
     }]);

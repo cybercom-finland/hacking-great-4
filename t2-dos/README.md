@@ -26,3 +26,22 @@ Run to start the vms
     ansible-playbook playbook.yml
     vagrant ssh monitor -- "cd /vagrant; sudo docker-compose up"
 
+## Instructions to start from scratch with Ubuntu
+
+The instructions are for Ubuntu host to be accesesd remotely
+
+    sudo apt-get install vim virt-manager qemu-system openssh-server
+
+    sudo apt-get dist-upgrade
+
+    # /etc/ssh/sshd_config
+    PasswordAuthentication no
+
+Downlad and install vagrant .deb package
+
+    sudo apt-get install git build-essential ruby-dev libvirt-dev golang python-virtualenv ansible libffi-dev python-dev libssl-dev
+
+    # one can use also a virtualenv, initialize it before running pip
+    pip install ansible
+
+    vagrant up

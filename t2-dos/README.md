@@ -1,5 +1,14 @@
 # Play with a web service in the preconfigured setup
 
+There is a setup of two hosts
+
+    host1 <-- host2
+
+- host1 is service a web app
+- host2 can be used to load the application
+
+Both VMs are in the same network inside a linux pc.
+
 The addresses are handed over on premises.
 
 Dashboard looks like this

@@ -3,6 +3,8 @@
 
 A mobile application that uses OpenStreetMap will be built. Also, some open data other than the map itself will be  retrieved and shown on the map. You can choose the data freely but also  some ready to choose options will be given.
 
++ [Very short introduction slides](/t3-osm/intro_slides.pdf)
+
 ## Open data
 
 Suggested open location data:

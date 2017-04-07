@@ -1,5 +1,5 @@
 {
-  "server": "192.168.121.6:5556",
+  "server": "192.168.121.32:5556",
   "server_type": "ws",
   "workspaces": [
     {
@@ -8,56 +8,25 @@
         "type": "Balloon",
         "weight": 1,
         "id": "fb6a0a7873196a6de5d91b682c72d9201322ca1b",
-        "version": 34,
+        "version": 45,
         "child": {
           "type": "VStack",
           "weight": 1,
           "id": "cebdabe42e48f246650be0bd58c0d0751a9a2fe7",
-          "version": 34,
+          "version": 45,
           "children": [
             {
               "type": "HStack",
               "weight": 1,
               "id": "513084e2af4e048d5f3413578fa0de32bbf557aa",
-              "version": 29,
+              "version": 40,
               "children": [
                 {
                   "type": "VStack",
                   "weight": 1,
                   "id": "866a02e17eb1013f83cc2c44f70165315b908c56",
-                  "version": 21,
+                  "version": 24,
                   "children": [
-                    {
-                      "type": "HStack",
-                      "weight": 1,
-                      "id": "14a7c38175ea1b11dfb9de7e19a5fd1fd8094871",
-                      "version": 6,
-                      "children": [
-                        {
-                          "type": "Flot",
-                          "weight": 1,
-                          "id": "46e8e3d705d9bf6ab0b4bd39bb29592f166354b1",
-                          "version": 2,
-                          "title": "host 1 mem",
-                          "query": "host = \"host1.local\" and service =~ \"memory/%\"",
-                          "min": null,
-                          "max": null,
-                          "timeRange": 300,
-                          "graphType": "line",
-                          "stackMode": "true",
-                          "tooltips": "metric"
-                        },
-                        {
-                          "type": "Dial",
-                          "weight": 1,
-                          "id": "cc20bbbf977a52bb7cf3f8ac6209a43dba660175",
-                          "version": 5,
-                          "title": "",
-                          "query": "host = \"host1.local\" and service =~ \"cpu-%/cpu-user\"",
-                          "max": ""
-                        }
-                      ]
-                    },
                     {
                       "type": "Flot",
                       "weight": 1,
@@ -103,38 +72,16 @@
                     {
                       "type": "Flot",
                       "weight": 1,
-                      "id": "932fe592c2056600341a118a3b99bf06d905f3d0",
-                      "version": 3,
-                      "title": "host1 throughput",
-                      "query": "host = \"host1.local\" and service =~ \"interface-eth0/if_octets/%\"",
+                      "id": "af7343360e6e32c8e1ea4f391519213bbd4b46c9",
+                      "version": 1,
+                      "title": "host 1 tcp connections",
+                      "query": "host = \"host1.local\" and service =~ \"tcpconns-80-local%\"",
                       "min": null,
                       "max": null,
                       "timeRange": 300,
                       "graphType": "line",
                       "stackMode": "false",
                       "tooltips": "metric"
-                    },
-                    {
-                      "type": "HStack",
-                      "weight": 1,
-                      "id": "9183af71ecd0f5829a78d5d6db4353389b44a3da",
-                      "version": 3,
-                      "children": [
-                        {
-                          "type": "Flot",
-                          "weight": 1,
-                          "id": "57817719701ac12e94f93341ab17e1d7df33b20e",
-                          "version": 1,
-                          "title": "host1 nginx requests",
-                          "query": "host = \"host1.local\" and service =~ \"nginx/nginx_requests%\"",
-                          "min": null,
-                          "max": null,
-                          "timeRange": 300,
-                          "graphType": "line",
-                          "stackMode": "false",
-                          "tooltips": "metric"
-                        }
-                      ]
                     }
                   ]
                 },
@@ -142,21 +89,15 @@
                   "type": "VStack",
                   "weight": 1,
                   "id": "cdd456cbc901a85e68083276574aae83bbf10fc5",
-                  "version": 1,
+                  "version": 9,
                   "children": [
-                    {
-                      "type": "View",
-                      "weight": 1,
-                      "id": "d7a9cb83983a6aa73e77f417434e9da9c1a96a2c",
-                      "version": 0
-                    },
                     {
                       "type": "Flot",
                       "weight": 1,
                       "id": "bddc35260a114ce3a32f37813b42c443c3fc3e1e",
-                      "version": 6,
-                      "title": "cpu",
-                      "query": "service =~ \"cpu-0%\"",
+                      "version": 9,
+                      "title": "host1 response time",
+                      "query": "host = \"host1.local\" and service =~ \"curl-127.0.0.1%\"",
                       "min": null,
                       "max": null,
                       "timeRange": 300,
@@ -165,13 +106,32 @@
                       "tooltips": "simple"
                     },
                     {
-                      "type": "Log",
+                      "type": "Flot",
                       "weight": 1,
-                      "id": "fcf6567e78f8e133d52e783e1d2ba920d0991f33",
-                      "version": 2,
-                      "title": "",
-                      "query": "host = \"host1.local\"",
-                      "lines": "10"
+                      "id": "57817719701ac12e94f93341ab17e1d7df33b20e",
+                      "version": 5,
+                      "title": "host1 nginx requests",
+                      "query": "host = \"host1.local\" and service =~ \"nginx/nginx_requests%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 300,
+                      "graphType": "line",
+                      "stackMode": "false",
+                      "tooltips": "metric"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "932fe592c2056600341a118a3b99bf06d905f3d0",
+                      "version": 4,
+                      "title": "host1 throughput",
+                      "query": "host = \"host1.local\" and service =~ \"interface-eth0/if_octets/%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 300,
+                      "graphType": "line",
+                      "stackMode": "false",
+                      "tooltips": "metric"
                     }
                   ]
                 }
@@ -179,7 +139,8 @@
             }
           ]
         }
-      }
+      },
+      "id": "c209066e79d87520fae67305f1cd4f674dfc3104"
     },
     {
       "name": "Riemann",
@@ -336,7 +297,8 @@
             }
           ]
         }
-      }
+      },
+      "id": "b425444f78f4de069e235eb0da21d4e713d82d40"
     },
     {
       "name": "view",
@@ -515,7 +477,8 @@
             }
           ]
         }
-      }
+      },
+      "id": "32c496db03ff57048fa8e21c7ccd0fdbe36ef661"
     }
   ]
 }
